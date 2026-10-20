@@ -1,0 +1,10 @@
+[Unit]
+Description=Schedule: Morning infographic post (publishes 10:00)
+
+[Timer]
+OnCalendar=*-*-* 09:45:00 Asia/Dhaka
+Persistent=false
+AccuracySec=30s
+
+[Install]
+WantedBy=timers.target

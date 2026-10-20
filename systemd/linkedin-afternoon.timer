@@ -1,0 +1,10 @@
+[Unit]
+Description=Schedule: Afternoon carousel post (publishes 16:30)
+
+[Timer]
+OnCalendar=*-*-* 16:15:00 Asia/Dhaka
+Persistent=false
+AccuracySec=30s
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,13 @@
+[Unit]
+Description=LinkedIn agent - Morning infographic post (publishes 10:00)
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=liagent
+WorkingDirectory=/opt/linkedin-agent
+Environment=PLAYWRIGHT_BROWSERS_PATH=/opt/linkedin-agent/.browsers
+ExecStart=/opt/linkedin-agent/.venv/bin/python -m agent.main morning
+TimeoutStartSec=3600
+Nice=5

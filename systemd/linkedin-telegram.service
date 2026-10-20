@@ -1,0 +1,15 @@
+[Unit]
+Description=LinkedIn agent - Telegram control bot
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=liagent
+WorkingDirectory=/opt/linkedin-agent
+Environment=PLAYWRIGHT_BROWSERS_PATH=/opt/linkedin-agent/.browsers
+ExecStart=/opt/linkedin-agent/.venv/bin/python -m agent.telegram_bot
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target
